@@ -11,6 +11,7 @@ import java.io.IOException;
  */
 public class FileConstants {
     public static final String FILE_WORK_PATH = System.getProperty("user.dir") + File.separator + "files";
+    public static final String JAVA_TXT_FILE_PATH = FILE_WORK_PATH + File.separator +"java.txt";
 
     public static void close(Closeable closeable) {
         if(closeable != null){
