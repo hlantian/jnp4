@@ -85,6 +85,6 @@ FileOutputStream outfile = new FileOutputStream("results.dat");
 - OutputStreamWriter:字符到字节的桥梁
 ## 例子
 ### 1. 实现了字符串的复制 
-见 FileOutputStreamCopy.java
+见 [FileOutputStreamCopy.java](#)
 ### 2. FileOutputStream实现复制功能
-见 StringCopy.java
+见 [StringCopy.java](#)
