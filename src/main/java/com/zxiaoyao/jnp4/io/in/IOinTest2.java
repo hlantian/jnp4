@@ -22,6 +22,9 @@ public class IOinTest2 {
 
     }
 
+    /**
+     * 1. FileInputStream通过文件byte数组暂存文件中内容，将其转换为String数据，再按照 “回车换行” 进行分割。
+     */
     public void test1() {
         InputStream is = null;
         FileOutputStream fos = null;
