@@ -5,7 +5,7 @@ import com.zxiaoyao.jnp4.FileConstants;
 import java.io.*;
 
 /**
- * @Description
+ * @Description Java InputStream写入文件，保存文件
  * @Author hlantian
  * @Date 2021/2/1 10:17
  */
@@ -23,7 +23,7 @@ public class IOinTest2 {
     }
 
     /**
-     * 1. FileInputStream通过文件byte数组暂存文件中内容，将其转换为String数据，再按照 “回车换行” 进行分割。
+     * 1. InputStre0am从内存中读出数据到byte[]中然后,使用FileOutputStream写入文件中。
      */
     public void test1() {
         InputStream is = null;
@@ -50,7 +50,9 @@ public class IOinTest2 {
 
     }
 
-
+    /**
+     * file创建文件并写入文件内容
+     */
     public void test2(){
         File file = new File(FileConstants.FILE_WORK_PATH+File.separator+"writer1.txt");
         Writer writer = null;

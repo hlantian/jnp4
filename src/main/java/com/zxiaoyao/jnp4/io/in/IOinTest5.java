@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * @Description
+ * @Description Java InputStream.read()读取数据流字节，存储到缓冲区数组
  * @Author hlantian
  * @Date 2021/2/1 11:33
  */
@@ -30,9 +30,9 @@ public class IOinTest5 {
         try {
             is = new FileInputStream(FileConstants.JAVA_TXT_FILE_PATH);
             byte[] tt = new byte[1024];
-            while (is.available() != 0){
-                for(int i =0;i <1024;i++){
-                    tt[i] = (byte)is.read();
+            while (is.available() != 0) {
+                for (int i = 0; i < 1024; i++) {
+                    tt[i] = (byte) is.read();
                 }
             }
             System.out.println(new String(tt));
@@ -40,45 +40,45 @@ public class IOinTest5 {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             FileConstants.close(is);
         }
 
     }
 
-    public void test2(){
+    public void test2() {
         InputStream is = null;
         try {
             is = new FileInputStream(FileConstants.JAVA_TXT_FILE_PATH);
             byte[] bytes = new byte[1024];
             int b;
-            while((b = is.read(bytes)) != -1){
+            while ((b = is.read(bytes)) != -1) {
                 System.out.println(new String(bytes));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             FileConstants.close(is);
         }
 
     }
 
-    public void test3(){
+    public void test3() {
         InputStream is = null;
         try {
             is = new FileInputStream(FileConstants.JAVA_TXT_FILE_PATH);
             byte[] bytes = new byte[is.available()];
             int b;
-            while((b = is.read(bytes,0,bytes.length)) != -1){
+            while ((b = is.read(bytes, 0, bytes.length)) != -1) {
                 System.out.println(new String(bytes));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             FileConstants.close(is);
         }
     }

@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * @Description
+ * @Description Java InputStream读取网络图片
  * @Author hlantian
  * @Date 2021/2/1 10:32
  */
@@ -19,6 +19,9 @@ public class IOinTest3 {
         test3.test();
     }
 
+    /**
+     * Java从网络读取图片通过InputStream保存至本地，代码如下：
+     */
     public void test() {
         InputStream inputStream = null;
         FileOutputStream outputStream = null;
