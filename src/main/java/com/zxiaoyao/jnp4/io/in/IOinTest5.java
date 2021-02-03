@@ -2,10 +2,7 @@ package com.zxiaoyao.jnp4.io.in;
 
 import com.zxiaoyao.jnp4.FileConstants;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * @Description Java InputStream.read()读取数据流字节，存储到缓冲区数组
@@ -22,6 +19,9 @@ public class IOinTest5 {
         System.out.println("----------end-------------");
         System.out.println();
         test5.test3();
+        System.out.println("-----------end-------------");
+        System.out.println();
+        test5.test5();
 
     }
 
@@ -80,6 +80,55 @@ public class IOinTest5 {
             e.printStackTrace();
         } finally {
             FileConstants.close(is);
+        }
+    }
+
+    public void test5() {
+        File file = new File(FileConstants.JAVA_TXT_FILE_PATH);
+        FileInputStream inputStream=null;
+        try {
+            inputStream = new FileInputStream(file);
+            byte[] b = new byte[(int)file.length()];
+            int len = inputStream.read(b, 0, b.length);
+            System.out.println(new String(b));
+            System.out.println("b.length== len ? :" + (b.length == len));
+            System.out.println();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            FileConstants.close(inputStream);
+        }
+
+        try {
+            inputStream = new FileInputStream(file);
+            byte[] bb = new byte[1024];
+            int len2 = inputStream.read(bb);
+            System.out.println(new String(bb,0,len2));
+            System.out.println("len2 = " + len2);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            FileConstants.close(inputStream);
+        }
+
+        try {
+            inputStream = new FileInputStream(file);
+            byte[] bbb = new byte[(int)file.length()];
+            for(int i =0;i<bbb.length;i++){
+                bbb[i] = (byte)inputStream.read();
+            }
+            System.out.println(new String(bbb));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            FileConstants.close(inputStream);
         }
     }
 }
